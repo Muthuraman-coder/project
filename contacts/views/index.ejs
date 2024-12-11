@@ -1,0 +1,26 @@
+<html lang="en">
+<%- include("./partials/head.ejs") %>
+
+<body>
+  <%- include("./partials/nav.ejs") %>
+
+  <div class="blogs content">
+    <h2>All Contacts</h2>
+
+    <% if (contacts.length > 0) { %>
+      <% contacts.forEach(contact => { %>
+
+        <h3 class="title"><%= contact.title %></h3>
+        <p class="snippet"><%= contact.snippet %></p>
+        <p class="snippet"><%= contact.body %></p>
+        
+      <% }) %>
+    <% } else { %>
+      <p>There are no Contacts to display...</p>
+    <% } %>
+    
+  </div>
+
+  <%- include("./partials/footer.ejs") %>
+</body>
+</html>
